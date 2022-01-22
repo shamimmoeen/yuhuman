@@ -1,6 +1,6 @@
 <?php
 // yuhuman_generate_fake_user_data();
-yuhuman_generate_fake_blood_requests();
+// yuhuman_generate_fake_blood_requests();
 // yuhuman_delete_fake_blood_requests();
 
 $success_message = isset( $_GET['yh-success'] ) ? sanitize_text_field( $_GET['yh-success'] ) : '';
