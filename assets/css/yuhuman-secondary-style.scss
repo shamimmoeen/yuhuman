@@ -1,0 +1,453 @@
+.fieldset-blood-group {
+	.field {
+		align-items: center;
+		display: flex;
+		gap: 20px;
+
+		label {
+			align-items: center;
+			display: inline-flex;
+			gap: 10px;
+		}
+	}
+}
+
+.wpum-form {
+	// Remember me checkbox
+	.fieldset-remember {
+		> label {
+			display: flex;
+			gap: 15px;
+		}
+	}
+
+	// Checkbox
+	fieldset:not(.fieldset-remember) {
+		> label {
+			> .field {
+				display: flex;
+				gap: 15px;
+
+				.description {
+					font-size: var(--global--font-size-xs);
+					font-weight: normal;
+					line-height: var(--wp--typography--line-height, var(--global--line-height-body));
+					margin: 0 0 calc(var(--global--spacing-unit) * 0.5);
+					width: calc(100% - 50px);
+				}
+
+				&.required-field {
+					.description {
+						&::after {
+							color: red;
+							content: '*';
+						}
+					}
+				}
+
+				&.required-field ~ .wpum-required {
+					display: none;
+				}
+			}
+		}
+	}
+
+	// Inputs
+	fieldset input.input-email,
+	fieldset input.input-text,
+	fieldset input.input-telephone,
+	fieldset input.input-datepicker,
+	fieldset select,
+	fieldset textarea {
+		width: 100%;
+	}
+
+	// fieldset
+	fieldset {
+		padding: 0 0 var(--global--spacing-unit);
+	}
+
+	// Label
+	fieldset {
+		label {
+			font-size: var(--global--font-size-sm);
+			font-weight: var(--form--label-weight);
+			line-height: var(--wp--typography--line-height, var(--global--line-height-body));
+			margin-bottom: calc(var(--global--spacing-unit) * 0.5);
+		}
+	}
+
+	// Select
+	fieldset {
+		select {
+			margin-bottom: var(--global--spacing-unit);
+		}
+	}
+
+	@media (min-width: 768px) {
+		.fieldset-district,
+		.fieldset-upazilla {
+			float: left;
+			width: calc(50% - 10px);
+		}
+
+		.fieldset-upazilla {
+			margin-left: 20px;
+		}
+
+		.fieldset-mobile-number {
+			clear: both;
+		}
+
+		.fieldset-birthday,
+		.fieldset-blood-group {
+			float: left;
+			width: calc(50% - 10px);
+		}
+
+		.fieldset-blood-group {
+			margin-left: 20px;
+		}
+
+		.fieldset-want-to-donate-blood {
+			clear: both;
+		}
+	}
+}
+
+#wpum-directory-top-bar,
+.wpum-directory-single-user {
+	.wpum-row {
+		align-items: center;
+	}
+}
+
+#yuhuman-donors-filter-bar {
+	background: #f9f9f9;
+	border-top: 1px solid #e5e5e5;
+	padding: 0.5em 1em;
+
+	.wpum-col-xs {
+		&:last-child {
+			text-align: right;
+		}
+	}
+}
+
+#upazilla {
+	min-width: 200px;
+
+	&:disabled {
+		border-color: #eee
+	}
+}
+
+.wpum-donor-description {
+	font-size: smaller;
+}
+
+#wpum-directory-search-form {
+	.wpum-row {
+		align-items: center;
+	}
+
+	.form-fields {
+		flex-basis: 70%;
+		max-width: 70%;
+	}
+
+	.form-submit {
+		flex-basis: 30%;
+		max-width: 30%;
+	}
+}
+
+/* 767px and smaller screen sizes */
+@media (max-width: 767px) {
+	#yuhuman-donors-filter-bar,
+	#wpum-directory-top-bar {
+		.wpum-row {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 15px;
+
+			.wpum-col-xs {
+				&:last-child {
+					text-align: left;
+				}
+			}
+		}
+	}
+
+	#wpum-directory-top-bar {
+		.wpum-col-xs {
+			&:first-child {
+				order: 3;
+			}
+		}
+	}
+}
+
+/* 1039px and smaller screen sizes */
+@media (min-width: 768px) and (max-width: 1039px) {
+	#yuhuman-donors-filter-bar,
+	#wpum-directory-top-bar {
+		.wpum-row {
+			.wpum-col-xs {
+				> p {
+					display: flex;
+					flex-direction: column;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+#profile-header-container {
+	#profile-navigation {
+		display: none;
+	}
+}
+
+.wpum-template.wpum-form {
+	.wpum-message {
+		margin-top: 10px;
+	}
+}
+
+.primary-navigation .header-actions .menu-button a {
+	text-transform: none;
+}
+
+.request-for-blood-form {
+	input[type="text"],
+	input[type="number"],
+	input[type="tel"] {
+		width: 100%;
+	}
+
+	@media (min-width: 768px) {
+		.fieldset-patient-name,
+		.fieldset-patient-blood-group,
+		.fieldset-when-need-blood,
+		.fieldset-blood-unit,
+		.fieldset-mobile-number,
+		.fieldset-hospital-name {
+			float: left;
+			width: calc(50% - 10px);
+		}
+
+		.fieldset-patient-blood-group,
+		.fieldset-blood-unit,
+		.fieldset-hospital-name {
+			margin-left: 20px;
+		}
+
+		.fieldset-when-need-blood,
+		.fieldset-mobile-number,
+		.fieldset-location {
+			clear: left;
+		}
+	}
+}
+
+.wpum-template.request-for-blood-form .wpum-message {
+	margin: 0 0 30px;
+}
+
+.yuhuman-hidden {
+	display: none;
+}
+
+.yuhuman-blood-requests-list {
+	.wpum-meta {
+		a {
+			display: inline-flex;
+		}
+
+		.button {
+			padding: 10px 15px;
+		}
+
+		@media (min-width: 768px) {
+			align-items: center;
+			display: flex;
+			gap: 10px;
+			justify-content: flex-end;
+		}
+	}
+
+	.edit-blood-request-button {
+		color: green;
+	}
+
+	.delete-blood-request-button {
+		color: red;
+	}
+
+	.edit-blood-request-button,
+	.delete-blood-request-button {
+		display: inline-flex;
+		text-decoration: none;
+	}
+
+	.wpum-directory-single-user .edit-blood-request-button,
+	.wpum-directory-single-user .delete-blood-request-button {
+		transition: all 0.2s;
+	}
+
+	.wpum-directory-single-user:not(:hover) .edit-blood-request-button,
+	.wpum-directory-single-user:not(:hover) .delete-blood-request-button {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.wpum-donor-description {
+		i {
+			color: #555;
+			min-width: 30px;
+			text-align: center;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	#wpum-directory-users-list {
+		.wpum-row {
+			[class^='wpum-col-xs'] {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+
+			.wpum-meta {
+				text-align: left;
+			}
+		}
+	}
+}
+
+.blood-request-modal {
+	h2 {
+		margin: 0 0 30px;
+	}
+
+	.yuhuman-blood-request-modal-content-wrapper {
+		text-align: left;
+	}
+
+	.remodal-close {
+		border-radius: 0;
+		left: auto;
+		right: 0;
+	}
+
+	.yuhuman-blood-request-modal-content {
+		i {
+			color: #555;
+			min-width: 40px;
+			text-align: center;
+		}
+	}
+}
+
+.yuhuman-search-form-inline-checkbox {
+	align-items: center;
+	display: flex;
+
+	@media (min-width: 768px) {
+		&:last-child {
+			justify-content: flex-end;
+		}
+	}
+
+	label {
+		align-items: center;
+		color: inherit;
+		display: inline-flex;
+		font-size: inherit;
+		font-weight: inherit;
+		gap: 5px;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@media (min-width: 501px) {
+	#wpum-directory-search-form {
+		.wpum-row {
+			.wpum-col-xs-10,
+			.wpum-col-xs-2 {
+				flex-basis: unset;
+				max-width: unset;
+			}
+
+			$button_width: 150px;
+
+			.wpum-col-xs-10 {
+				width: calc(100% - #{$button_width});
+			}
+
+			.wpum-col-xs-2 {
+				width: $button_width;
+			}
+		}
+	}
+}
+
+#wpum-directory-search-form,
+#yuhuman-donors-filter-bar {
+	display: none;
+}
+
+#wpum-user-directory > form {
+	position: relative;
+}
+
+.yuhuman-filter-toggle-wrapper {
+	bottom: calc(100% + 10px);
+	position: absolute;
+	right: 1em;
+
+	span {
+		background-color: #fff;
+		border: 1px solid #ddd;
+		color: #666;
+		cursor: pointer;
+		display: inline-flex;
+		font-size: smaller;
+		font-weight: normal;
+		padding: 1px 5px;
+		text-transform: uppercase;
+		user-select: none;
+	}
+}
+
+@media (max-width: 767px) {
+	.yuhuman-filter-toggle-wrapper {
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	.wpum-directory-single-user {
+		.wpum-row {
+			&.wpum-middle-xs {
+			}
+		}
+	}
+}
+
+#yuhuman-donors-filter-bar.yuhuman-blood-request-filter-bar {
+	.wpum-row {
+		.wpum-col-xs {
+			flex: auto;
+		}
+	}
+}
+
+.yuhuman-blood-request-filter-bar {
+	#blood-group,
+	#blood-units {
+		min-width: 100px;
+	}
+}
