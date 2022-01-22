@@ -296,6 +296,20 @@ function yuhuman_edit_blood_request_page_template_redirect() {
 
 add_action( 'template_redirect', 'yuhuman_edit_blood_request_page_template_redirect' );
 
+function yuhuman_register_to_blood_requests_template_redirect() {
+	$current_user_id        = get_current_user_id();
+	$current_page_id        = get_the_ID();
+	$register_page_id       = absint( wpum_get_core_page_id( 'register' ) );
+	$blood_requests_page_id = yuhuman_get_blood_requests_page_id();
+
+	if ( $current_user_id && $current_page_id === $register_page_id && $blood_requests_page_id ) {
+		wp_redirect( get_the_permalink( $blood_requests_page_id ) );
+		exit;
+	}
+}
+
+add_action( 'template_redirect', 'yuhuman_register_to_blood_requests_template_redirect' );
+
 /**
  * Display pagination for blood requests.
  *
@@ -304,7 +318,6 @@ add_action( 'template_redirect', 'yuhuman_edit_blood_request_page_template_redir
  * @return void
  */
 function yuhuman_blood_request_pagination( $data ) {
-	$paged = get_query_var( 'paged' );
 	$total = $data->max_num_pages ?? 0;
 
 	echo '<div class="wpum-directory-pagination">';
@@ -315,7 +328,7 @@ function yuhuman_blood_request_pagination( $data ) {
 
 	echo paginate_links( array(
 		'base'      => str_replace( $search_for, $replace_with, esc_url( get_pagenum_link( $big ) ) ),
-		'current'   => $paged,
+		'current'   => max( 1, get_query_var( 'paged' ) ),
 		'total'     => $total,
 		'prev_text' => __( 'Previous page', 'yuhuman' ),
 		'next_text' => __( 'Next page', 'yuhuman' )

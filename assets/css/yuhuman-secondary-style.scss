@@ -315,6 +315,8 @@
 @media (max-width: 767px) {
 	#wpum-directory-users-list {
 		.wpum-row {
+			gap: 15px;
+
 			[class^='wpum-col-xs'] {
 				flex-basis: 100%;
 				max-width: 100%;
@@ -322,6 +324,28 @@
 
 			.wpum-meta {
 				text-align: left;
+
+				.button {
+					display: inline-flex;
+				}
+			}
+		}
+	}
+
+	.yuhuman-blood-requests-list {
+		.wpum-middle-xs {
+			.wpum-meta {
+				align-items: center;
+				display: flex;
+				gap: 10px;
+
+				.edit-blood-request-button {
+					order: 2;
+				}
+
+				.delete-blood-request-button {
+					order: 3;
+				}
 			}
 		}
 	}

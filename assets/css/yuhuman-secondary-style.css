@@ -174,11 +174,24 @@
   text-align: center; }
 
 @media (max-width: 767px) {
-  #wpum-directory-users-list .wpum-row [class^='wpum-col-xs'] {
-    flex-basis: 100%;
-    max-width: 100%; }
-  #wpum-directory-users-list .wpum-row .wpum-meta {
-    text-align: left; } }
+  #wpum-directory-users-list .wpum-row {
+    gap: 15px; }
+    #wpum-directory-users-list .wpum-row [class^='wpum-col-xs'] {
+      flex-basis: 100%;
+      max-width: 100%; }
+    #wpum-directory-users-list .wpum-row .wpum-meta {
+      text-align: left; }
+      #wpum-directory-users-list .wpum-row .wpum-meta .button {
+        display: inline-flex; }
+
+  .yuhuman-blood-requests-list .wpum-middle-xs .wpum-meta {
+    align-items: center;
+    display: flex;
+    gap: 10px; }
+    .yuhuman-blood-requests-list .wpum-middle-xs .wpum-meta .edit-blood-request-button {
+      order: 2; }
+    .yuhuman-blood-requests-list .wpum-middle-xs .wpum-meta .delete-blood-request-button {
+      order: 3; } }
 .blood-request-modal h2 {
   margin: 0 0 30px; }
 .blood-request-modal .yuhuman-blood-request-modal-content-wrapper {

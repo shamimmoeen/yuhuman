@@ -164,11 +164,13 @@ $blood_requests = $query->get_posts();
 									<?php echo esc_html( $hospital_name ); ?>
 								</p>
 							<?php endif; ?>
-							<p>
-								<i class="fas fa-map-marker-alt"></i>
-								<?php esc_html_e( 'Location', 'yuhuman' ); ?>:
-								<?php echo esc_html( $location ); ?>
-							</p>
+							<?php if ( $location ) : ?>
+								<p>
+									<i class="fas fa-map-marker-alt"></i>
+									<?php esc_html_e( 'Location', 'yuhuman' ); ?>:
+									<?php echo esc_html( $location ); ?>
+								</p>
+							<?php endif; ?>
 							<?php if ( $details ) : ?>
 								<p>
 									<i class="fas fa-info-circle"></i>
